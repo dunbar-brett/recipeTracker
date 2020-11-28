@@ -40,11 +40,18 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    '@nuxtjs/style-resources',
   ],
+
+  
+  styleResources: {
+    scss: [
+        '@/assets/scss/variables.scss',
+    ]
+  },
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: true,
       themes: {
