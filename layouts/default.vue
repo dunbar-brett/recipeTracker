@@ -1,8 +1,6 @@
 <template>
-  <v-card
-    class="overflow-hidden mx-auto">
-    <nuxt />
-    <bottomNav />
+  <v-card class="overflow-hidden mx-auto">
+    <bottomNav v-if="isLoggedIn" />
   </v-card>
 </template>
 
@@ -14,6 +12,11 @@ export default {
   },
   data () {
     return {
+    }
+  },
+  computed: {
+    isLoggedIn() {
+      return true;
     }
   }
 }
