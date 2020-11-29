@@ -1,7 +1,7 @@
 <template>
-  <main>
+  <v-container>
       <h1>Recipes</h1>
-      <validation-observer ref="observer" v-slot="">
+      <validation-observer ref="observer">
         <form>
             <validation-provider v-slot="{ errors }" name="Name" rules="required|max:10">
                 <v-text-field v-model="name" :counter="10" :error-messages="errors" label="Name" required >
@@ -13,12 +13,14 @@
                 </v-text-field>
             </validation-provider>
 
-            <validation-provider v-slot="{ errors }" name="select" rules="required" >
+            <!-- <validation-provider v-slot="{ errors }" name="select" rules="required" >
                 <v-select v-model="select" :items="items" :error-messages="errors" 
                     label="Select" data-vv-name="select" required>
                 </v-select>
-            </validation-provider>
-            <validation-provider v-slot="" rules="required" name="checkbox" >
+            </validation-provider> -->
+            <v-select :items="items" label="Stanard">
+            </v-select>
+            <validation-provider rules="required" name="checkbox" >
                 <v-checkbox v-model="checkbox" :error-messages="errors" value="1" 
                     label="Option" type="checkbox" required>
                 </v-checkbox>
@@ -32,7 +34,7 @@
             </v-btn>
         </form>
     </validation-observer>
-  </main>
+  </v-container>
 </template>
 
 <script>

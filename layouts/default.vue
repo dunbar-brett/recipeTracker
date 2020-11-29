@@ -1,14 +1,19 @@
 <template>
-  <v-card class="overflow-hidden mx-auto">
-    <bottomNav v-if="isLoggedIn" />
-  </v-card>
+  <v-app>
+    <v-content >
+      <nuxt />
+    </v-content>
+    <BottomNavigation v-if="isLoggedIn"></BottomNavigation>
+
+  </v-app>
 </template>
 
 <script>
-import bottomNav from '../components/bottomNav.vue'
+import BottomNavigation from '../components/bottomNav.vue';
+
 export default {
   components: {
-    bottomNav,
+    BottomNavigation,
   },
   data () {
     return {
@@ -21,3 +26,7 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+html { overflow-y: auto; }
+</style>
